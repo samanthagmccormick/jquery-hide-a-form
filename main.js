@@ -2,32 +2,23 @@ $(document).on('ready', function() {
 
 	$(".formContainer").hide();
 
-	// On click of button with class "show", toggle the form (toggle = show/hide), replace text,
-	// and add a class of "hide"
-	$(document).on("click", ".show", function() {
+	// TOGGLE FORM //
 
-		$(".formContainer").toggle();
-		$(this).text("Hide Form").addClass("hide").removeClass("show");
+			// On click of button with class "show", toggle the form (toggle = show/hide), replace text,
+			// and add a class of "hide"
+			$(document).on("click", ".show", function() {
+				$(".formContainer").toggle();
+				$(this).text("Hide Form").addClass("hide").removeClass("show");
+			});
 
-	});
+			// On click of an element with both "show" and "hide" classes, toggle the form again, 
+			// then remove the "hide" class so that you can once again use the above 'hide' event handler
+			$(document).on("click", ".hide", function() {
+				$(".formContainer").toggle();
+				$(this).text("Show Form").addClass("show").removeClass("hide");
+			});
 
-	// On click of an element with both "show" and "hide" classes, toggle the form again, 
-	// then remove the "hide" class so that you can once again use the above 'hide' event handler
-	$(document).on("click", ".hide", function() {
-
-		$(".formContainer").toggle();
-		$(this).text("Show Form").addClass("show").removeClass("hide");
-	});
-
-	// On click of a textarea...
-	$(document).on("click", "textarea", function() {
-		$(this).focus();  // Auto-focus the textarea
-	});
-
-	// On blur of a textarea...
-	$(document).on("blur", "textarea", function() {
-		$(this).show();   /* When blurred, show user what they entered */
-	});
+	// SUBMIT BUTTON //		
 
 	// On click of submit button
 	$(document).on("click", ".submit", function() {
@@ -37,6 +28,7 @@ $(document).on('ready', function() {
 		var booksEntry = $(".books").val();
 		var jsEntry = $(".js_libraries").val();
 
+		// Hide the form after you submit it
 		$(".submit").closest(".formContainer").hide();
 
 		/* Take each entry and put it into the corresponding class location */

@@ -47,3 +47,11 @@ button {
 	background: green;
 }
 
+.display {
+	display: block;
+
+}
+
+.display p {
+	display: block;
+}
