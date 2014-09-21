@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery Hide a Form</title>
+  <title>jQuery Hide a Form - Dynamic Form!</title>
   <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -10,6 +10,7 @@
 
 	<div class = "container">
 		<h1>User Profile (jQuery - Hide a Form)</h1>
+		<h2>The form is generated dynamically.</h2>
 
 		<img src="http://placehold.it/200x200">
 
@@ -18,14 +19,22 @@
 		</button>
 
 		<div class = "formContainer">
-			<h2>Enter your name:</h2>
-			<textarea class = "name"></textarea>
-			<h2>Enter your bio:</h2>
-			<textarea class = "bio"></textarea>
-			<h2>Enter your favorite books:</h2>
-			<textarea class = "books"></textarea>
-			<h2>Enter your favorite JavaScript libraries:</h2>
-			<textarea class = "js_libraries"></textarea>
+			<div class = "box">
+				<h2>Enter your name:</h2>
+				<textarea class = "name"></textarea>
+			</div>
+			<div class = "box">
+				<h2>Enter your bio:</h2>
+				<textarea class = "bio"></textarea>
+			</div>
+			<div class = "box">
+				<h2>Enter your favorite books:</h2>
+				<textarea class = "books"></textarea>
+			</div>
+			<div class = "box">
+				<h2>Enter your favorite JavaScript libraries:</h2>
+				<textarea class = "js_libraries"></textarea>
+			</div>
 
 			<button class = "submit">
 			Submit
@@ -33,18 +42,8 @@
 		</div>
 
 		<div class = "display">
-			<h2>Name</h2>
-			<p class = "name">Here is where your name will appear.</p>
-
-			<h2>Bio</h2>
-			<p class = "bio">Here is where your bio will appear.</p>
-
-			<h2>Favorite Books</h2>
-			<p class = "books">Here is where your favorite books will appear.</p>
-
-			<h2>Favorite JavaScript Libraries</h2>
-			<p class = "js_libraries">Here is where your favorite JS libraries will appear.</p>
-		</div>  <!-- End of display div -->
+			<!-- Empty div to fill with dynamically generated form contents! -->
+		</div> 
 
 	</div>  <!-- End of container -->
 	
