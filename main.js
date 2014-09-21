@@ -7,36 +7,27 @@ $(document).on('ready', function() {
 			// On click of button with class "show", toggle the form (toggle = show/hide), replace text,
 			// and add a class of "hide"
 			$(document).on("click", ".show", function() {
-				$(".formContainer").toggle();
+				$(".formContainer").slideDown("slow");
 				$(this).text("Hide Form").addClass("hide").removeClass("show");
 			});
 
 			// On click of an element with both "show" and "hide" classes, toggle the form again, 
 			// then remove the "hide" class so that you can once again use the above 'hide' event handler
 			$(document).on("click", ".hide", function() {
-				$(".formContainer").toggle();
+				$(".formContainer").slideUp("slow");
 				$(this).text("Show Form").addClass("show").removeClass("hide");
 			});
 
-	// SUBMIT BUTTON //		
+	// Generate the form dynamically when you click the Submit button...
+	$(".submit").on("click", function(e){
+		e.preventDefault();
+		$(".box").each( function(){
+			var textareaClass = $(this).find("textarea").attr("class").toUpperCase();
+			var textareaEntry = $(this).find("textarea").val();
+			$(".formContainer").slideUp("slow");
+			$(this).closest("body").find(".display").append("<h2>" + textareaClass + "</h2><p>" + textareaEntry + "</p>");
+		});
 
-	// On click of submit button
-	$(document).on("click", ".submit", function() {
-		// On submit, save all value entries into their own variables. This must be donw within this event!
-		var nameEntry = $(".name").val();  
-		var bioEntry = $(".bio").val(); 
-		var booksEntry = $(".books").val();
-		var jsEntry = $(".js_libraries").val();
-
-		// Hide the form after you submit it
-		$(".submit").closest(".formContainer").hide();
-
-		/* Take each entry and put it into the corresponding class location */
-		$(".name").replaceWith(nameEntry);
-		$(".bio").replaceWith(bioEntry);
-		$(".books").replaceWith(booksEntry);
-		$(".js_libraries").replaceWith(jsEntry);
 	});
-
 
 });
